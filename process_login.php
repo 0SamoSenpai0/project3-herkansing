@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["gebruikersnaam"];
     $password = $_POST["password"];
 
-    if (isset($_POST["submit"])) {
+    // if (isset($_POST["submit"])) {55555555555555555555555555555555555555555
 
     // Establish database connection
     $servername = "localhost";
@@ -17,18 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Check if the username already exists in the database
-    $stmt = $conn->prepare("SELECT gebruikersnaam FROM account WHERE gebruikersnaam = ?");
-    if (!$stmt) {
-        die("Error preparing query: " . $conn->error);
-    }
-    $stmt->bind_param("s", $username);
-    if (!$stmt->execute()) {
-        die("Error executing query: " . $stmt->error);
-    }
-    $stmt->store_result();
-    if ($stmt->num_rows > 0) {
-        die("Username already exists");
-    }
+    // $stmt = $conn->prepare("SELECT gebruikersnaam FROM account WHERE gebruikersnaam = ?");
+    // if (!$stmt) {
+    //     die("Error preparing query: " . $conn->error);
+    // }
+    // $stmt->bind_param("s", $username);
+    // if (!$stmt->execute()) {
+    //     die("Error executing query: " . $stmt->error);
+    // }
+    // $stmt->store_result();
+    // if ($stmt->num_rows > 0) {
+    //     die("Username already exists");
+    // }55555555555555555555555555555555555
 
     // Prepare and execute SQL query to insert a new record
     $stmt = $conn->prepare("INSERT INTO account (gebruikersnaam, password) VALUES (?, ?)");
@@ -36,12 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error preparing query: " . $conn->error);
     }
     $stmt->bind_param("ss", $username, $password);
-    if (!$stmt->execute()) {
-        die("Error executing query: " . $stmt->error);
-    }
+    // if (!$stmt->execute()) {
+    //     die("Error executing query: " . $stmt->error);
+    // }55555555555555555555555555555
 
     // Get the last inserted user ID
-    $last_user_id = $conn->insert_id;
+    // $last_user_id = $conn->insert_id;5555555555555555
 
     // Display success message
     // echo "Data inserted successfully. User ID: " . $last_user_id;
@@ -55,5 +55,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //  "<br>\n".   
       htmlspecialchars($username));
     }
-}
+// }
 ?>

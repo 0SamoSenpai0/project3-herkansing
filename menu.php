@@ -26,6 +26,14 @@
       </div>
     </div>
     <div class="menuright">
+    <li class="dropdown">
+        <!-- <a href="javascript:void(0)" class="dropbtn">css</a> -->
+        <a href="main.css" class="dropbtn">css</a>
+        <div class="dropdown-content">
+          <a href="#"></a>
+          <a href="#"></a>
+          <a href="#"></a>
+        </div>
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">zakenlijk</a>
         <div class="dropdown-content">
