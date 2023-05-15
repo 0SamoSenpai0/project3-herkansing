@@ -40,14 +40,16 @@ header{
   align-items: center;
   flex-direction: row;
 }
-footer{
-display: flex;
-flex-direction: row;
-/* align-self: center; */
-justify-content: center;
-background-color: blue;
-color: white;
-/* height: 50%; */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: white;
+  padding: 10px;
 }
 #inlog{
 /* top: right; */
@@ -57,7 +59,7 @@ margin-left: 15%;
 body{
 /* display: flex;  */
 /* width: 100%; */
-/* height: 100%  ;   */
+height: 100%  ;  
 overflow-x: hidden;
 /* overflow-y: hidden; */
 margin-left: 0vw;

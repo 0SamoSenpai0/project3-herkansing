@@ -22,7 +22,7 @@
 
    <div id="inlog">
    
-    <a href="account.php" id="account"><?php include "process_login.php";?></a>
+    <!-- <a href="account.php" id="account"><?php include "process_login.php";?></a> -->
 </div>
 <a href="account.php"><img src="img/persoonicoontje.png" id="persoon"></a>
 <a href="favoriet.php"><img src="img/heart.png" alt="" id="favorites" ></a> 
@@ -59,11 +59,11 @@ producten();
 
 
 
-
-</body>
 <?php
 include "footer.php";
 ?>
+</body>
+
 
 
 </html>

@@ -1,6 +1,4 @@
 <?php
-// auteur: Wigmans
-// functie: algemene functies tbv hergebruik
  function ConnectDb(){
     $servername = "localhost";
     $username = "root";
@@ -9,10 +7,8 @@
    
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        // echo "Connected successfully";
         return $conn;
     } 
     catch(PDOException $e) {
@@ -20,10 +16,6 @@
     }
 
  }
-
- 
- 
- 
 
  function Getprod($productid){
     $conn = ConnectDb();
@@ -88,7 +80,6 @@ function producten(){
     
     //print table
     Printproducten($result);
-    
  }
 function Printproducten($result){
     // Zet de hele table in een variable en print hem 1 keer 
@@ -115,18 +106,22 @@ function Printproducten($result){
         
         // Wijzig knopje
         $table .= "<td>". 
-            "<form method='post' action='favoriet.php?productid=$row[productid]' >       
-                    <button name='fav'>favoriet</button>	 
-            </form>" . "</td>";  
-            
-
-        // Delete via linkje href
-        // $table .= '<td><a href="delete_bier.php?biercode='.$row["biercode"].'">verwijder</a></td>';
-        $table .= "<td>". 
-            "<form method='post' action='winkelwagentje.php'>
-            <input type='hidden' name='productid' value='<?php echo $row[productid]; ?>'>
-            <button name='cart'>naar winkelwagen</button>
+        "<form method='post' action='update.php?productid=$row[productid]' >       
+                <button name='wzg'>Wzg</button>	 
         </form>" . "</td>";
+
+    // Delete via linkje href
+    // $table .= '<td><a href="delete_bier.php?productid='.$row["productid"].'">verwijder</a></td>';
+    $table .= "<td>". 
+    "<form method='post' action='delete.php?productid=$row[productid]' >       
+            <button name='wzg'>Delete</button>	 
+    </form>" . "</td>";
+
+
+    $table .= "<td>". 
+    "<form method='post' action='invoegen.php?productid=$row[productid]' >       
+            <button name='wzg'>toevoegen</button>	 
+    </form>" . "</td>";
 
         $table .= "</tr>";
     }
@@ -134,4 +129,49 @@ function Printproducten($result){
 
     echo $table;
 }
+
+function updateProduct($productid, $product, $categorie, $leverancier, $prijs) {
+    // Create a connection to the database
+    $conn = mysqli_connect("localhost", "root", "", "project3");
+
+    // Check if the connection was successful
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Prepare the SQL query
+    $sql = "UPDATE producten SET product='$product', categorie='$categorie', leverancier='$leverancier', prijs=$prijs WHERE productid=$productid";
+
+    // Execute the query
+    if (mysqli_query($conn, $sql)) {
+        echo "Record updated successfully";
+    }
+
+}
+
+function DeleteProd($productid) {
+    $conn = connectdb();
+   
+
+    $sql = $conn->prepare("DELETE FROM producten WHERE productid = ?");
+    return $sql->execute([$productid]);
+  }
+
+  function InsertProduct($product, $categorie, $leverancier, $prijs){
+
+    $conn = mysqli_connect("localhost", "root", "", "project3");
+
+    // Check if the connection was successful
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+
+    $sql = "INSERT producten SET product='$product', categorie='$categorie', leverancier='$leverancier', prijs=$prijs";
+
+    // Execute the query
+    if (mysqli_query($conn, $sql)) {
+        echo "Record inserted successfully";
+    }
+  }
 ?>
