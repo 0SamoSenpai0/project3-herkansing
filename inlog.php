@@ -8,47 +8,35 @@
 </head>
 
 <header>
-
-<?php
-
-    include "menu1.php";
-    ?>
-    
+<a href="homepagina2.php"><img src="img/bolcom_logo_pay-off_blauw_rgb-scaled.jpg" alt="" id="logo"></a>
+   <form id="zoekbar" action="">
+    <input type="text" value="typ hier wat u zoekt" id="zoeken">
+   <input type="submit" id="" name="" value="zoeken"> 
+   </form>
+   <img src="img/zoek-removebg-preview.png" alt="" id="zoek"></img>
   </header>
 
-  <body>
-    <div id="dc">
- 
-    <?php
+  <body id="inlogbody">
+  <?php
     include "menu.php";
+    include "footer.php";
     ?>
-  
-
+    <div id="dc">
     <section>
-    <div class="inl">
     <div id="INLOG">
-    <form  
+    <form  class="inl"
     action="homepagina2.php"
      method="post"  
      >
-        <h1>Inloggen</h1><br>
-        <label for="gebruikersnaam">Gebruikersnaam:</label>
-        <input type="text" name="gebruikersnaam" id="gebruikersnaam" required>
+        <h1 id="inlogh1">Inloggen</h1><br>
+        <label class="inloglabel" for="gebruikersnaam">Gebruikersnaam:</label>
+        <input class="inloginput" type="text" name="gebruikersnaam" id="gebruikersnaam" required>
         <br>
-        <label for="password">Wachtwoord:</label>
-        <input type="password" name="password" id="password" required>
+        <label class="inloglabel" for="password">Wachtwoord:</label>
+        <input class="inloginput" type="password" name="password" id="password" required>
         <br>
-        <input type="submit" value="Log in" name="submit"> terug naar home <br>
+        <input class="inlogsubmit" type="submit" value="Log in" name="submit"> terug naar home <br>
         </form> <br>
-        <form action="account.php" method="post">
-        <label for="gebruikersnaam">Gebruikersnaam:</label>
-        <input type="text" name="gebruikersnaam" id="gebruikersnaam" required>
-        <br>
-        <label for="password">Wachtwoord:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <input type="submit" value="Log in" name="submit"> naar account pagina
-        </form>
     </div>
     </section>
 

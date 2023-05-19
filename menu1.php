@@ -9,27 +9,26 @@
 </head>
     
 <header>
-    <!-- <a href="#"></a>
-    <a href="#"></a>
-    <a href="#"></a>
-    <a href="about.php">over</a> -->
-   <!-- <img src="img/bolcom_logo_pay-off_blauw_rgb-scaled.jpg" alt="" id="logo"> -->
    <a href="homepagina2.php"><img src="img/bolcom_logo_pay-off_blauw_rgb-scaled.jpg" alt="" id="logo"></a>
-   <form action="">
+   <form id="zoekbar" action="">
     <input type="text" value="typ hier wat u zoekt" id="zoeken">
    <input type="submit" id="" name="" value="zoeken"> 
    </form>
    <img src="img/zoek-removebg-preview.png" alt="" id="zoek"></img>
 
-   <!-- <div id="inlog"> -->
    <div id="menu1">
    
-    <!-- <a href="account.php" id="account"> include "process_login.php";</a> -->
+   <a href="#" id="account">
+      <?php
+      include "process_login.php";
+      if (isset($_SESSION["username"])) {
+        echo "Welkom, " . htmlspecialchars($_SESSION["username"]);
+    }
+      ?></a>
 </div>
-<a href="account.php"><img src="img/persoonicoontje.png" id="persoon"></a>
-<a href="favoriet.php"><img src="img/heart.png" alt="" id="favorites" ></a> 
-<a href="winkelwagentje.php"><img src="img/winkelwagentje.png" alt="" id="winkelwagentje"></a>
-
+<!-- <a href="account.php"> -->
+    <img src="img/persoonicoontje.png" id="persoon">
+<!-- </a> -->
 </header>
 </html>
 

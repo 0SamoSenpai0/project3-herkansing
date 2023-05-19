@@ -8,33 +8,31 @@
     <title>Document</title>
 </head>
 <header>
-
 <?php
-
-    include "menu1.php";
-  
-    
-    ?>
-    
-  </header>
+include "menu1.php";
+?>
+</header>
 <body>
 <?php 
   include "menu.php";
+  include "footer.php";
+?>
+<div class="producten">
+ <?php 
 
 function GetData($table){
-        // Connect database
-        $conn = ConnectDb();
+  $conn = ConnectDb();
     
-        // $query = $conn->prepare("SELECT * FROM $table");
-        $query = $conn->prepare("SELECT * FROM producten WHERE categorie = 'muziek & games'");
-        $query->execute();
-        $result = $query->fetchall();
+  $query = $conn->prepare("SELECT * FROM producten WHERE categorie = 'muziek & games'");
+  $query->execute();
+  $result = $query->fetchall();
     
-        return $result;
-     }
-    include "producten.php"; 
-    producten();
-    ?>
+  return $result;
+}
+include "producten.php"; 
+producten();
+?>  
+</div>
 </body>
 </html>
 

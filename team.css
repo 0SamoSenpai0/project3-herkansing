@@ -1,0 +1,25 @@
+*{
+/* margin: 0%; */
+/* padding: 0%;  */    
+}
+#team{
+    text-align: center;
+}    
+body{
+    overflow: hidden;
+    border-style: solid;
+    background-color: lightblue;
+}
+    
+img{
+    height: 82vh;
+    width: 30vw;
+}
+
+.teamimg{
+    display: flex;
+    justify-content: space-between;
+    height: 82vh;
+    width: 100vw;
+    /* background-color: black; */
+}

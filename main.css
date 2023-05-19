@@ -53,7 +53,7 @@ footer {
 }
 #inlog{
 /* top: right; */
-margin-left: 15%;
+/* margin-left: 15%; */
 
 }
 body{
@@ -65,10 +65,13 @@ overflow-x: hidden;
 margin-left: 0vw;
 }
 .producten{
-/* margin-left: 25%; */
+margin-top: 2%;
 display: flex;
 flex-direction: column;
 align-items: center;
+font-size: 20px;
+/* font-size: 40px; */
+
 }
 #bodyinlog{
 display: flex;
@@ -83,7 +86,7 @@ margin-right: 50%;
 a{
   text-decoration: none;
   color: white;
-  font-size: larger;
+  font-size: 25px;
   font-weight: bolder;
 }
 
@@ -94,6 +97,9 @@ ul {
   overflow: hidden;
    /* background-color: #333;  */
   background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 li {
@@ -139,47 +145,52 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.menuright{
+
+/* .menuright{
   position: right;
-  padding-left: 60vw;
+  padding-left: 30vw;
 }
 .menuleft{
   position: left;
-  padding-left: 4vw;
-  
-}
+  padding-left: 5vw;
+} */
+
 #menu1{
-  margin-left: 15vw;
+  margin-left: 14%;
 }
+
 #land{
   background-image: url(img/flag-netherlands_1f1f3-1f1f1.png);
   background-size: cover;
 }
 .inlog{
-  /* margin:1vh 3vw 0 0; */
-  /* float: right;  */
-  /* width: 8vw; */
-  /* height: 5vh; */
-  /* background-color:#b0bd36; */
-  /* border-radius: 20px; */
-  /* position: fixed; */
-  /* right: 0; */
-  /* top: 0; */
+  /* margin:1vh 3vw 0 0;
+  float: right; 
+  width: 8vw;
+  height: 5vh;
+  background-color:#b0bd36;
+  border-radius: 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
   text-decoration: underline;
-  /* margin-left: 15vw; */
-  /* margin-left: 15vw; */
+  margin-left: 15vw;
+  margin-left: 15vw; */
   }
 #Inlog_a { 
   /* font-size: 2rem; */
   font-size: medium;
-  top: right;
-  /* margin-left: 15vw; */
+  /* top: right; */
+  margin-left: 55vw;
 }
 #zoeken{
   border-radius: 15px;
   height: 35px;
   width: 450px;
   margin-left: -6vw;
+}
+#zoekbar{
+  margin-left: 30%;
 }
 #favorites{
   height: 40px;
@@ -190,43 +201,79 @@ li.dropdown {
   width: 50px;
 }
 #account{
-  color: black;
-  /* margin-left: 15vw; */
+  color: white;
+  /* margin-left: 30vw; */
 }
 #persoon{
-  height: 35px;
-  width: 50px;
+  height: 55px;
+  width: 80px;
+  /* margin-left: 60vw; */
 }
 
-
-#INLOG{
-display: flex;
-width: 50vw;
-height: 60vh;
-background-color: white;
-justify-content: center;
-align-items: center;
-/* flex-direction: row; */
-
+p1{
+  font-size: 25px;
+}
+#inlog{
+margin-left: -40%;
 }
 
-#log{
-margin-left: -10vw;
+/* inlog pagina stuff */
+#inlogbody{
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
 }
 
-.inl{
-display: flex;
-width: 100vw;
-height: 80vh;
-background-color: blue;
-justify-content: center;
-align-items: center;
-margin-left: 0vw;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100vw;
+  margin-left: -5%;
+ 
 }
 
+.inl {
+  background-color: snow;
+  /* border-radius: 10px; */
+  border-radius: 100px;
+  padding: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #333333; 
+}
 
+#inlogh1 {
+  text-align: center;
+  color: #333333;
+}
 
-#dc{
-display: flex;
-flex-direction: column;
+.inloglabel {
+  display: block;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.inloginput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.inlogsubmit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inlogsubmit:hover {
+  background-color: #0056b3;
 }

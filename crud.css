@@ -24,9 +24,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  /* Rest of the CSS styles remain the same */
-  
-  
   input[type="text"],
   input[type="submit"],
   input[type="button"] {
